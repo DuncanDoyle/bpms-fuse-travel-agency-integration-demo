@@ -3,7 +3,7 @@ setlocal
 
 set PROJECT_HOME=%~dp0
 set DEMO=JBoss BPM Suite & JBoss Fuse Travel Agency Integration Demo
-set AUTHORS=Christina Lin, Andrew Block, Eric D. Schabell
+set AUTHORS=Christina Lin, Andrew Block, Eric D. Schabell, Duncan Doyle
 set PROJECT=git@github.com:jbossdemocentral/bpms-fuse-travel-agency-integration-demo.git
 
 REM BPM env
@@ -15,21 +15,21 @@ set SRC_DIR=%PROJECT_HOME%installs
 set PRJ_DIR=%PROJECT_HOME%projects
 set SUPPORT_DIR=%PROJECT_HOME%\support
 set TARGET_DIR=%PROJECT_HOME%\target
-set BPMS=jboss-bpmsuite-installer-6.2.0.BZ-1299002.jar
+set BPMS=jboss-bpmsuite-6.3.0.GA-installer.jar
 set EAP=jboss-eap-6.4.0-installer.jar
-set EAP_PATCH=jboss-eap-6.4.4-patch.zip
+set EAP_PATCH=jboss-eap-6.4.7-patch.zip
 set BPM_VERSION=6.2
 
 REM Fuse env
 set DEMO_HOME=%PROJECT_HOME%\target
-set FUSE=jboss-fuse-6.2.0.redhat-133
-set FUSE_ZIP=jboss-fuse-full-6.2.0.redhat-133.zip
+set FUSE=jboss-fuse-6.2.1.redhat-084
+set FUSE_ZIP=jboss-fuse-full-6.2.1.redhat-084.zip
 set FUSE_HOME=%DEMO_HOME%\%FUSE%
 set FUSE_PROJECT=projects\fuseparent
 set FUSE_SERVER_CONF=%FUSE_HOME%\etc
 set FUSE_SERVER_SYSTEM=%FUSE_HOME%\system
 set FUSE_SERVER_BIN=%FUSE_HOME%\bin
-set FUSE_VERSION=6.2.0
+set FUSE_VERSION=6.2.1
 
 REM wipe screen.
 cls 

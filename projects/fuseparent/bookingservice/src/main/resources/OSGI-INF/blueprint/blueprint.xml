@@ -27,7 +27,7 @@
     <route id="bookingRoute">
         <from uri="activemq:queue:booking"/>
         <bean method="createBooking" ref="bookingService"/>
-        <to uri="jpa://org.blogdemo.travelagency.Booking?consumeDelete=false"/>
+        <to uri="jpa://org.blogdemo.travelagency.persistenceData.Booking?consumeDelete=false"/>
         <log message="${body}"/>
         <setBody>
             <simple>${body.bookingid}</simple>
@@ -36,7 +36,7 @@
     <route id="cancelBookingRoute">
         <from uri="activemq:queue:cancelbooking"/>
         <bean method="put('bookingid',${body})" ref="params"/>
-        <pollEnrich timeout="2000" uri="jpa://org.blogdemo.travelagency.Booking?consumeDelete=false&amp;consumer.namedQuery=queryById&amp;consumer.parameters=#params"/>
+        <pollEnrich timeout="2000" uri="jpa://org.blogdemo.travelagency.persistenceData.Booking?consumeDelete=false&amp;consumer.namedQuery=queryById&amp;consumer.parameters=#params"/>
         <log message="${body.bookingid} ${body.recieveDate}"/>
         <choice>
             <when>

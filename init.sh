@@ -1,6 +1,6 @@
 #!/bin/sh 
 DEMO="JBoss BPM Suite & Fuse Travel Agency Integration Demo"
-AUTHORS="Christina Lin, Andrew Block, Eric D. Schabell"
+AUTHORS="Christina Lin, Andrew Block, Eric D. Schabell, Duncan Doyle"
 PROJECT="git@github.com:jbossdemocentral/bpms-fuse-travel-agency-integration-demo.git"
 
 #BPM env
@@ -11,20 +11,20 @@ SERVER_BIN=$JBOSS_HOME/bin
 SRC_DIR=./installs
 PRJ_DIR=./projects
 SUPPORT_DIR=./support
-BPMS=jboss-bpmsuite-installer-6.2.0.BZ-1299002.jar
+BPMS=jboss-bpmsuite-6.3.0.GA-installer.jar
 EAP=jboss-eap-6.4.0-installer.jar
-EAP_PATCH=jboss-eap-6.4.4-patch.zip
-BPM_VERSION=6.2
+EAP_PATCH=jboss-eap-6.4.7-patch.zip
+BPM_VERSION=6.3
 
 #Fuse env 
 DEMO_HOME=./target
-FUSE_ZIP=jboss-fuse-full-6.2.0.redhat-133.zip
-FUSE_HOME=$DEMO_HOME/jboss-fuse-6.2.0.redhat-133
+FUSE_ZIP=jboss-fuse-full-6.2.1.redhat-084.zip
+FUSE_HOME=$DEMO_HOME/jboss-fuse-6.2.1.redhat-084
 FUSE_PROJECT=projects/fuseparent
 FUSE_SERVER_CONF=$FUSE_HOME/etc
 FUSE_SERVER_SYSTEM=$FUSE_HOME/system
 FUSE_SERVER_BIN=$FUSE_HOME/bin
-FUSE_VERSION=6.2
+FUSE_VERSION=6.2.1
 
 
 
@@ -50,7 +50,7 @@ echo "##        ####   #      #     #  ###              #     ####  ###   ####  
 echo "##                                                                                 ##"   
 echo "##                                                                                 ##"   
 echo "##  brought to you by,                                                             ##"   
-echo "##                     ${AUTHORS}               ##"
+echo "##                     ${AUTHORS} ##"
 echo "##                                                                                 ##"   
 echo "##  ${PROJECT}   ##"
 echo "##                                                                                 ##"   
@@ -140,7 +140,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo
-echo "Applying JBoss EAP 6.4.4 patch now..."
+echo "Applying JBoss EAP patch now..."
 echo
 $JBOSS_HOME/bin/jboss-cli.sh --command="patch apply $SRC_DIR/$EAP_PATCH"
 
